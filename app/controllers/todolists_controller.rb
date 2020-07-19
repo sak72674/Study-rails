@@ -17,6 +17,16 @@ class TodolistsController < ApplicationController
   	@chart = Chart.find(params[:id])
   end
 
+  def edit
+    @chart = Chart.find(params[:id])
+  end
+
+  def update
+    chart = Chart.find(params[:id])
+    chart.update(chart_params)
+    redirect_to todolist_path(chart.id)
+  end
+
   private
   def chart_params
   	params.require(:chart).permit(:title, :date, :body)
