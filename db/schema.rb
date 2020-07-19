@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_18_104352) do
+ActiveRecord::Schema.define(version: 2020_07_19_034148) do
 
-  create_table "lists", force: :cascade do |t|
-    t.string "name"
-    t.string "age"
-    t.string "number"
-    t.string "home"
-    t.string "hobbies"
+  create_table "charts", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
