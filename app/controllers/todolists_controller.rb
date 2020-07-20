@@ -27,6 +27,12 @@ class TodolistsController < ApplicationController
     redirect_to todolist_path(chart.id)
   end
 
+  def destroy
+    chart = Chart.find(params[:id])
+    chart.destroy
+    redirect_to todolists_path
+  end
+
   private
   def chart_params
   	params.require(:chart).permit(:title, :date, :body)

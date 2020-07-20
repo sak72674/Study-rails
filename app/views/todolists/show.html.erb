@@ -5,4 +5,5 @@
 <h2>本文</h2>
 <p><%= simple_format(@chart.body) %></p>
 <%= link_to "編集", edit_todolist_path(@chart.id) %>
+<%= link_to "削除", destroy_todolist_path(@chart.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 <a href="/top"><h3>Topへ</h3></a>
