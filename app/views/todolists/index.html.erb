@@ -1,5 +1,21 @@
-<h1>目次</h1>
-<% @charts.each do |chart| %>
-	<p><%=link_to chart.title, todolist_path(chart.id) %></p>
-<% end %>
-<a href="/top"><h3>Topへ</h3></a>
+<div class="index-visual">
+	<section>
+		<h1 class="index-headline">Index</h1>
+	</section>
+
+	<% @charts.each do |chart| %>
+	<div class="index-list-box">
+		<table>
+			<tr class="index-list">
+				<td class="index-list-item"><%= chart.title %></td>
+				<td class="index-list-item"><%= chart.created_at %></td>
+				<td class="index-list-item"><%= link_to 'Show', todolist_path(chart.id) %></td>
+				<td class="index-list-item"><%= link_to 'Edit', edit_todolist_path(chart.id) %></td>
+				<td class="index-list-item"><%= link_to 'Delete', destroy_todolist_path(chart.id), method: :delete, "data-confirm" => "Are you sure you want to delete this item?" %></td>
+			</tr>
+		</table>
+	</div>
+	<% end %>
+
+	<h3 class="to-top"><%= link_to 'Top', top_path %></h3>
+</div>

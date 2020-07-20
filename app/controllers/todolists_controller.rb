@@ -10,7 +10,7 @@ class TodolistsController < ApplicationController
   end
 
   def index
-  	@charts = Chart.all
+  	@charts = Chart.all.order(created_at: :desc)
   end
 
   def show
